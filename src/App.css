@@ -1,0 +1,153 @@
+.App {
+  font-family: 'Teko', sans-serif;
+  font-size: x-large;
+
+}
+
+nav {
+  display: flex;
+  min-height: 20vh;
+  max-height: 40vh;
+  background: black;
+  color: white;
+  border-top: 2px solid red;
+  border-bottom: 3px solid white;
+}
+
+.navitem {
+  margin-left: auto;
+}
+
+h1, h2 {
+  color: white;
+}
+
+h3 {
+  color: rgb(161, 156, 156);
+}
+
+h4, h5, h6 {
+  color: white;
+}
+
+.navbar-brand {
+  display: flex;
+}
+
+.navbar-brand>img {
+  display: flex;
+  padding: 0px 0px;
+  max-height: 100px;
+}
+
+.row {
+  display: flex;
+}
+
+/*.column-split {
+  display: flex;
+  max-height: 490px;
+}*/
+
+.text-overlay { 
+  position: absolute;
+  top: 30px; 
+  left: 30;
+  color: white;
+  width: 100%; 
+  background: rgb(90, 90, 90);
+}
+
+.flex-container {
+  display: flex;
+  background: rgb(90, 90, 90);
+}
+
+.flex-container2 {
+  display: flex;
+  background: rgb(116, 113, 113);
+  padding-top: 30px;
+}
+
+.flex-div {
+  display: flex;
+  background: rgb(116, 113, 113);
+}
+
+.flex-child {
+  flex: 1;
+  margin: 30px;
+}  
+
+.flex-child:first-child {
+  margin-right: 0
+} 
+
+.flex-pic {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.5;
+}
+
+.flex-pic2 {
+  max-width: 70%;
+  max-height: 70%;
+
+}
+
+.site-footer {
+  background: black;
+  padding: 30px;
+  display: flex;
+  border-top: 2px solid red;
+}
+
+.div-footer {
+  flex: 1;
+  margin: 0px;
+}
+
+.footer-image {
+  max-width: 85px;
+  max-height: 85px;
+  padding: 5px;
+}
+
+.banner-img {
+  max-width: 100%;
+}
+
+.dark-bgd {
+  background-color: black;
+}
+
+.centered {
+  color: white;
+  align-items: right; 
+  top: 100px; 
+  left: 400px; 
+  width: 100%;
+}
+
+/*.services-banner {
+  background-image: url("../src/img/gtr.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 20vh;
+  opacity: .5;
+}
+
+.media-banner {
+  background-image: url("../src/img/albums.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 20vh;
+  opacity: .5;
+}*/
+
+.banner-title {
+  padding: 50px;
+  color: white;
+  opacity: 1;
+}
+
