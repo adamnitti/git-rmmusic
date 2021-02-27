@@ -7,7 +7,7 @@ function HomePanel1() {
     <React.Fragment>
       <div class="flex-container">
         <div class="flex-child ">
-          <img className="flex-pic list-unstyled" src="../img/mic1.jpg"></img>
+          <img className="flex-pic list-unstyled" src="../img/mic1.jpg" alt="microphone"></img>
         </div>
         <div class="flex-child">
           <h1>MUSIC DRIVEN BY STORIES.</h1>
@@ -37,7 +37,7 @@ function HomePanel1() {
           </ul>
         </div>
         <div class="flex-child">
-        <img className="flex-pic" src="../img/ssl_console.jpg"></img>
+        <img className="flex-pic" src="../img/ssl_console.jpg" alt="recording console"></img>
         </div>
       </div> 
       

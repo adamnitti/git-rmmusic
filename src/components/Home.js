@@ -1,5 +1,4 @@
 import React from 'react';
-import HomeCarousel from './Carousel';
 import HomePanel1 from './HomePanel1';
 import '../App.css';
 

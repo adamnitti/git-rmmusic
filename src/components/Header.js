@@ -30,7 +30,9 @@ class Header extends Component {
                             <h1>RENAISSANCE MAN MUSIC</h1>                 
                             <h3>The Soundtrack For Your Vision</h3>
                         </div>
+                      
                     <NavbarToggler onClick={this.toggleNav} />
+                    
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav className="navitem"> 
                             <NavItem>
@@ -49,11 +51,17 @@ class Header extends Component {
                                 <NavLink href="/about">ABOUT
                                 </NavLink>
                             </NavItem>
-                                            
+                            <NavItem>
+                                <NavLink href="/contact">CONTACT
+                                </NavLink>
+                            </NavItem>                    
                         </Nav>
+                        
                     </Collapse>
+                   
                     </Navbar>
                 </div>
+                
             </React.Fragment>
         );
     }

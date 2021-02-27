@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, Row, Col } from 'reactstrap';
+import { Card, CardImg, CardText, CardTitle, Row, Col } from 'reactstrap';
 import '../App.css';
 
 function Services() {
@@ -8,7 +8,7 @@ function Services() {
     <React.Fragment>
 
       <div>
-        <img className="banner-img" src="../img/services.png"></img>
+        <img className="banner-img" src="../img/services.png" alt="services banner"></img>
       </div>
 
       <Row className="card-columns flex-container2 justify-content-center align-items-top" >
@@ -18,11 +18,11 @@ function Services() {
           <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
             <CardTitle tag="h5">Crafting custom music, sound design, and soundscape solutions for business, broadcast, and production needs.
 
-</CardTitle>
-            <CardTitle tag="h5">FILM - PODCAST - TELEVISION - ADVERTISING - EVENTS - AUDIO BRANDING - THEMES - PRESENTATIONS</CardTitle>
-            <CardText tag="h5">Over 25 years of composition and entertainment industry experience, with a long list of artist credits including: Kenny Loggins, Carrie Underwood, London Symphony Orchestra, Michael McDonald, Christopher Cross, Susan Tedeschi, and Grammy-winners Heather Headley, Casting Crowns, and Steven Curtis Chapman.
+            </CardTitle>
+              <CardTitle tag="h5">FILM - PODCAST - TELEVISION - ADVERTISING - EVENTS - AUDIO BRANDING - THEMES - PRESENTATIONS</CardTitle>
+              <CardText tag="h5">Over 25 years of composition and entertainment industry experience, with a long list of artist credits including: Kenny Loggins, Carrie Underwood, London Symphony Orchestra, Michael McDonald, Christopher Cross, Susan Tedeschi, and Grammy-winners Heather Headley, Casting Crowns, and Steven Curtis Chapman.
 
-</CardText>
+            </CardText>
 
           </Card>
         </Col>

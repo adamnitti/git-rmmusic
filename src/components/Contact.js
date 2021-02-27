@@ -1,222 +1,96 @@
-import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row  } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { Control, Form, Errors } from 'react-redux-form';
-
-const required = val => val && val.length;
-const maxLength = len => val => !val || (val.length <= len);
-const minLength = len => val => val && (val.length >= len);
-const isNumber = val => !isNaN(+val);
-const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+import React, { Component } from 'react'
+import * as emailjs from 'emailjs-com'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 class Contact extends Component {
     constructor(props) {
-        super(props);
+      super(props);
+      this.state = {
+        name: '',
+        email: '',
+        message: ''
+      }
 
-        this.state = {
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: '',
-            agree: false,
-            contactType: 'By Phone',
-            feedback: '',
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
-        };
-
-        this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
-        this.props.resetFeedbackForm();
-    }
-
+  
     render() {
-
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <Breadcrumb>
-                            <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                            <BreadcrumbItem active>Contact Us</BreadcrumbItem>
-                        </Breadcrumb>
-                        <h2>Contact Us</h2>
-                        <hr />
-                    </div>
+      return(
+        <React.Fragment>
+        <div>
+          <img className="banner-img" src="../img/contact.png" alt="contact banner"></img>
+        </div>
+        <div className="row flex-container2">
+            <div className="col-sm-6">
+            <Form col id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                <FormGroup className="col-md-8 ml-auto">
+                    <Label htmlFor="name">Name</Label>
+                    <Input type="text" value={this.state.name} onChange={this.onNameChange.bind(this)} />
+                </FormGroup>
+                <FormGroup className="col-md-8 ml-auto">
+                    <Label htmlFor="exampleInputEmail1">Email address</Label>
+                    <Input type="email" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+                </FormGroup>
+                <FormGroup className="col-md-8 ml-auto">
+                    <Label htmlFor="message">Message</Label>
+                    <Input type="textarea" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
+                </FormGroup>
+                <div className="align-right">
+                <Button type="submit" color="primary">Submit</Button>
                 </div>
-
-                <div className="row row-content align-items-center">
-                    <div className="col-sm-4">
-                        <h5>Our Address</h5>
-                        <address>
-                            1 Nucamp Way<br />
-                            Seattle, WA 98001<br />
-                            U.S.A.
-                        </address>
-                    </div>
-                    <div className="col">
-                        <a role="button" className="btn btn-link" href="tel:+12065551234"><i className="fa fa-phone" /> 1-206-555-1234</a><br />
-                        <a role="button" className="btn btn-link" href="mailto:fakeemail@fakeemail.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
-                    </div>
-                </div>
-                <div className="row row-content">
-                    <div className="col-12">
-                        <h2>Send us your Feedback</h2>
-                        <hr />
-                    </div>
-                    <div className="col-md-10">
-                        <Form model="feedbackForm" onSubmit={values => this.handleSubmit(values)}>
-                            <Row className="form-group" row>
-                                <Label htmlFor="firstName" md={2}>First Name</Label>
-                                <Col md={10}>
-                                    <Control.text model=".firstName" id="firstName" name="firstName"
-                                        placeholder="First Name"
-                                        className="form-control"
-                                        validators={{
-                                            required,
-                                            minLength: minLength(2),
-                                            maxLength: maxLength(15)
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".firstName"
-                                        show="touched"
-                                        component="div"
-                                        messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be at least 2 characters',
-                                            maxLength: 'Must be 15 characters or less'
-                                        }}
-                                    />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="lastName" md={2}>Last Name</Label>
-                                <Col md={10}>
-                                    <Control.text model=".lastName" id="lastName" name="lastName"
-                                        placeholder="Last Name"
-                                        className="form-control"
-                                        validators={{
-                                            required,
-                                            minLength: minLength(2),
-                                            maxLength: maxLength(15)
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".lastName"
-                                        show="touched"
-                                        component="div"
-                                        messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be at least 2 characters',
-                                            maxLength: 'Must be 15 characters or less'
-                                        }}
-                                    />
-                                </Col>                        
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="phoneNum" md={2}>Phone</Label>
-                                <Col md={10}>
-                                    <Control.text model=".phoneNum" id="phoneNum" name="phoneNum"
-                                        placeholder="Phone number"
-                                        className="form-control"
-                                        validators={{
-                                            required,
-                                            minLength: minLength(10),
-                                            maxLength: maxLength(15),
-                                            isNumber
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".phoneNum"
-                                        show="touched"
-                                        component="div"
-                                        messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be at least 10 numbers',
-                                            maxLength: 'Must be 15 numbers or less',
-                                            isNumber: 'Must be a number'
-                                        }}
-                                    />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="email" md={2}>Email</Label>
-                                <Col md={10}>
-                                    <Control.text model=".email" id="email" name="email"
-                                        placeholder="Email"
-                                        className="form-control"
-                                        validators={{
-                                            required,
-                                            validEmail
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".email"
-                                        show="touched"
-                                        component="div"
-                                        messages={{
-                                            required: 'Required',
-                                            validEmail: 'Invalid email address'
-                                        }}
-                                    />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Col md={{size: 4, offset: 2}}>
-                                    <div className="form-check">
-                                        <Label check>
-                                            <Control.checkbox
-                                                model=".agree"
-                                                name="agree"
-                                                className="form-check-input"
-                                            /> {' '}
-                                            <strong>May we contact you?</strong>
-                                        </Label>
-                                    </div>
-                                </Col>
-                                <Col md={4}>
-                                    <Control.select model=".contactType" name="contactType"
-                                        className="form-control">
-                                        <option>By Phone</option>
-                                        <option>By Email</option>
-                                    </Control.select>
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="feedback" md={2}>Your Feedback</Label>
-                                <Col md={10}>
-                                    <Control.textarea model=".feedback" id="feedback" name="feedback"
-                                        rows="12"
-                                        className="form-control"
-                                    />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Col md={{size: 10, offset: 2}}>
-                                    <Button type="submit" color="primary">
-                                        Send Feedback
-                                    </Button>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </div>
-                </div>
+            </Form>
             </div>
-        );
-    }
-}
+            <div className="col-sm-4 align-left">
+                <h1>Let's Chat</h1>
+                <h5>We would love the opportunity to work with you and help you achieve your musical vision!</h5>
+                <h5>Submit your inquiry via this form or just give us a call at 615.289.6533. You can also email us directly at <a href="mailto:rmmusic@mail.com"><h3>RMMusic@mail.com.</h3></a></h5>
+            </div>
 
-export default Contact;
+            
+             
+        </div>
+        </React.Fragment>
+      );
+    }
+  
+    onNameChange(event) {
+      this.setState({name: event.target.value})
+    }
+  
+    onEmailChange(event) {
+      this.setState({email: event.target.value})
+    }
+  
+    onMessageChange(event) {
+      this.setState({message: event.target.value})
+    }
+
+    resetForm() {
+      this.setState({
+        name: '',
+        email: '',
+        message: '',
+      })
+    }
+  
+    handleSubmit( e ) {
+      e.preventDefault();
+      console.log(e);
+
+     const templateParams = {
+        user_name: this.state.name,
+        user_email: this.state.email,
+        message: this.state.message
+       }
+
+      emailjs.send('contact_service', 'contact_form', templateParams, 'user_FMi4Ms7RRoHdXF8HNH3B3')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      this.resetForm()
+    }
+  }
+  
+  export default Contact;
