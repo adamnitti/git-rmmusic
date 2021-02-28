@@ -42,7 +42,7 @@ function Media() {
           <Player src={"../music/mixdown.mp3"} header={"Modern Contemplative"}/>
         </div>
         <div className="col-md-5 flex-child">
-          <Player  src={"../music/Push_It_To_D_Limit.wav"} header={"IEX Intro Theme"}/>
+          <Player  src={"../music/Push_It_To_D_Limit.wav"} header={"IEX Push It To D Limit"}/>
         </div>
       </div>
       <div className="flex-div justify-content-center">
@@ -50,7 +50,7 @@ function Media() {
           <Player src={"../music/retirement_tools_demo_emu.mp3"} header={"Strings/Piano Theme"}/>
         </div>
         <div className="col-md-5 flex-child">
-          <Player  src={"../music/zissou_vibe_revised_w_vo.mp3"} header={"IEX Intro Theme"}/>
+          <Player  src={"../music/zissou_vibe_revised_w_vo.mp3"} header={"JP Morgan Demo"}/>
         </div>
       </div>
     </React.Fragment>
