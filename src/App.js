@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
+        
         <Route path="/" exact component={Home} />
         <Route path="/services" component={Services} />
         <Route path="/media" component={Media} />
