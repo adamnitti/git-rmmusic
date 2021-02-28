@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavLink, NavbarToggler, Collapse, NavItem, Nav } from 'reactstrap';
 import '../App.css';
 
@@ -23,45 +24,45 @@ class Header extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <Navbar dark sticky="top" expand="md">                   
+                    <Navbar dark sticky="top" expand="md">
                     <NavbarBrand href="/"><img src="../img/renaissance.jpg" alt="Rmm Logo" />
                     </NavbarBrand>
                         <div>
-                            <h1>RENAISSANCE MAN MUSIC</h1>                 
+                            <h1>RENAISSANCE MAN MUSIC</h1>
                             <h3>The Soundtrack For Your Vision</h3>
                         </div>
-                      
+
                     <NavbarToggler onClick={this.toggleNav} />
-                    
+
                     <Collapse isOpen={this.state.isNavOpen} navbar>
-                        <Nav className="navitem"> 
+                        <Nav className="navitem">
                             <NavItem>
-                                <NavLink href="/">HOME
+                                <NavLink tag={Link} to="/">HOME
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/services">SERVICES
+                                <NavLink tag={Link} to="/services">SERVICES
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/media">MEDIA
+                                <NavLink tag={Link} to="/media">MEDIA
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/about">ABOUT
+                                <NavLink tag={Link} to="/about">ABOUT
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/contact">CONTACT
+                                <NavLink tag={Link} to="/contact">CONTACT
                                 </NavLink>
-                            </NavItem>                    
+                            </NavItem>
                         </Nav>
-                        
+
                     </Collapse>
-                   
+
                     </Navbar>
                 </div>
-                
+
             </React.Fragment>
         );
     }
