@@ -76,6 +76,7 @@ class Contact extends Component {
     handleSubmit( e ) {
       e.preventDefault();
       console.log(e);
+      alert('Thanks for reaching out! We will be back in touch ASAP!');
 
      const templateParams = {
         user_name: this.state.name,
