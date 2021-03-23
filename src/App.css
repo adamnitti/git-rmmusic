@@ -16,6 +16,8 @@ nav {
 
 .navitem {
   margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 h1, h2 {

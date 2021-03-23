@@ -74,15 +74,16 @@ class Contact extends Component {
     }
   
     handleSubmit( e ) {
+      const newLine = "\r\n";
       e.preventDefault();
       console.log(e);
-      alert('Thanks for reaching out! We will be back in touch ASAP!');
+      alert('Thanks for writing! We will be in touch shortly.' + newLine + newLine + this.state.name + newLine + this.state.email + newLine + this.state.message);
 
-     const templateParams = {
+      const templateParams = {
         user_name: this.state.name,
         user_email: this.state.email,
         message: this.state.message
-       }
+      }
 
       emailjs.send('contact_service', 'contact_form', templateParams, 'user_FMi4Ms7RRoHdXF8HNH3B3')
       .then((result) => {
