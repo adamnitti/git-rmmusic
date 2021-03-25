@@ -9,7 +9,7 @@ function Footer(props) {
                 Renaissance Man Music<br/>
                 P.O. Box 542<br/>
                 Franklin, TN 37065<br/>
-                615-763-3865<br/><br/>
+                615-289-6533<br/><br/>
                 <a href="mailto:rmmusic@mail.com">RMMusic@mail.com</a>
                 </h3>
             </div>

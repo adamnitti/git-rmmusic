@@ -5,9 +5,8 @@
 }
 
 nav {
-  display: flex;
   min-height: 20vh;
-  max-height: 40vh;
+  max-height: 100vh;
   background: black;
   color: white;
   border-top: 2px solid red;
@@ -16,8 +15,6 @@ nav {
 
 .navitem {
   margin-left: auto;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 h1, h2 {
@@ -30,6 +27,8 @@ h3 {
 
 h4, h5, h6 {
   color: white;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .navbar-brand {
@@ -88,13 +87,20 @@ h4, h5, h6 {
 .flex-pic {
   max-width: 100%;
   max-height: 100%;
+  min-width: 30%;
+  
   /*opacity: 0.5;*/
 }
 
 .flex-pic2 {
-  max-width: 70%;
-  max-height: 70%;
+  max-width: 50%;
+  max-height: 50%;
+  padding: 20px;
+}
 
+.flex-pic3 {
+  float: left;
+  max-height: 70%;
 }
 
 .site-footer {
@@ -167,4 +173,7 @@ h4, h5, h6 {
   padding: 20px;
 }
 
-
+.error-mess {
+  color: rgb(175, 22, 22);
+  text-shadow: black;
+}

@@ -24,42 +24,42 @@ class Header extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <Navbar dark sticky="top" expand="sm">                   
-                    <NavbarBrand href="/"><img src="../img/renaissance.jpg" alt="Rmm Logo" />
-                    </NavbarBrand>
-                        <div>
-                            <h1>RENAISSANCE MAN MUSIC</h1>                 
-                            <h3>The Soundtrack For Your Vision</h3>
-                        </div>
-                      
-                    <NavbarToggler onClick={this.toggleNav} />
-                    
-                    <Collapse isOpen={this.state.isNavOpen} navbar>
-                        <Nav className="navitem"> 
-                            <NavItem>
-                                <NavLink href="/">HOME
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/services">SERVICES
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/media">MEDIA
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/about">ABOUT
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/contact">CONTACT
-                                </NavLink>
-                            </NavItem>                    
-                        </Nav>
+                    <Navbar dark sticky="top" expand="md" >                   
+                        <NavbarBrand href="/"><img src="../img/renaissance.jpg" alt="Rmm Logo" className="mr-auto"/>                      
+                        </NavbarBrand>
+                            <div>
+                                <h1>RENAISSANCE MAN MUSIC</h1>                 
+                                <h3>The Soundtrack For Your Vision</h3>
+                            </div>    
+                          
+                        <NavbarToggler onClick={this.toggleNav} />
                         
-                    </Collapse>
-                   
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                            
+                                <Nav className="ml-auto"> 
+                                    <NavItem>
+                                        <NavLink href="/">HOME
+                                        </NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} to="/services">SERVICES
+                                        </NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} to="/media">MEDIA
+                                        </NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} to="/about">ABOUT
+                                        </NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} to="/contact">CONTACT
+                                        </NavLink>
+                                    </NavItem>                    
+                                </Nav>
+                            
+                        </Collapse>
                     </Navbar>
                 </div>
                 

@@ -8,13 +8,10 @@ function About() {
         <img className="banner-img" src="../img/about.png" alt="about banner"></img>
       </div>
       <div className="flex-container">
-        <div className="flex-child col-md-6 align-right">
-          <img className="flex-pic" src="../img/adam-drums.png" alt="kid playing drums"></img>
-            <h4>Renaissance Man Music</h4>
-            <h4>615.289.6533</h4>
-            <h4><a href="mailto:rmmusic@mail.com"><h3>RMMusic@mail.com</h3></a></h4>
-        </div>
-        <div className="flex-child">
+        <div col-sm-2>
+          <img className="flex-pic2" src="../img/adam-drums.png" alt="kid playing drums"></img>
+        
+        
           <h5>
             My name is Adam Nitti, and I am the creator of Renaissance Man Music. I have had a love affair with music as far back as I can remember. Inspired by my grandfather, who was a virtuosic concert pianist and violinist, I got the music bug at 5 years old after receiving a toy guitar for my birthday from my uncle. Seeing my extraordinary enthusiasm, my parents bought me a drum set and shortly thereafter got me started on classical piano lessons.
           </h5>
@@ -27,8 +24,8 @@ function About() {
           <h5>
             Sincerely,<br></br>Adam Nitti
           </h5>
-          
-        </div>
+        </div> 
+       
       </div>
     </React.Fragment>
 
