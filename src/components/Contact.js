@@ -132,7 +132,6 @@ class Contact extends Component {
             console.log(error.text);
         });
         this.resetForm();
-       
       }
     };  
 
