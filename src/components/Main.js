@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-function HomePanel1() {
+function Main() {
   return (
     
     <React.Fragment>
@@ -46,4 +46,4 @@ function HomePanel1() {
   );
 }
 
-export default HomePanel1;
+export default Main;
